@@ -7,8 +7,9 @@
 
     <!--Application Resources-->
     <Application.Resources>
+        <local:LocalizedStrings xmlns:local="clr-namespace:Assigment01" x:Key="LocalizedStrings" />
     </Application.Resources>
-
+        
     <Application.ApplicationLifetimeObjects>
         <!--Required object that handles lifetime events for the application-->
         <shell:PhoneApplicationService 

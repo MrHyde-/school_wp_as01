@@ -17,26 +17,26 @@
     <ScrollViewer Name="ScrollViewerAssigment01">
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Margin="0,0,0,30">
-            <TextBlock x:Name="ApplicationTitle" Text="Microsoft®" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Outlook App" TextWrapping="Wrap" Margin="9,-20,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="{Binding Path=AppResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="{Binding Path=AppResources.PageTitle, Source={StaticResource LocalizedStrings}}" TextWrapping="Wrap" Margin="9,-20,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             
             <StackPanel x:Name="ControlPanel" Margin="0, 20, 0, 0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Suojaus" FontSize="22.667" />
+                    <TextBlock Text="{Binding Path=AppResources.TitleProtection, Source={StaticResource LocalizedStrings}}" FontSize="22.667" />
                     <TextBlock Text=" ( " FontSize="22.667"/>
-                    <TextBlock Name="TextBlockShowPublicPrivateInfo" Text="näytä selitys" Foreground="Orange" Tap="TextBlockShowPublicPrivateInfo_OnTap" FontSize="22.667"/>
+                    <TextBlock Name="TextBlockShowPublicPrivateInfo" Text="{Binding Path=AppResources.ShowExplanation, Source={StaticResource LocalizedStrings}}" Foreground="Orange" Tap="TextBlockShowPublicPrivateInfo_OnTap" FontSize="22.667"/>
                     <TextBlock Text=" )" FontSize="22.667" />
                 </StackPanel>
-                
-                <RadioButton Name="RadioButtonPublicPhone" Content="##Julkinen" GroupName="GroupPhoneType"/>
-                <TextBlock Name="TextBlockPublicProtectedInfo" TextWrapping="Wrap" />
 
-                <RadioButton Name="RadioButtonPrivatePhone" Content="##Yksityinen" GroupName="GroupPhoneType" BorderThickness="0" />
-                <TextBlock Name="TextBlockPrivateProtectedInfo" TextWrapping="Wrap" />
-                <TextBlock Name="TextBlockSecurityWarning" TextWrapping="Wrap" Foreground="Orange" />
+                <RadioButton Name="RadioButtonPublicPhone" Content="{Binding Path=AppResources.ThisIsPublicPhone, Source={StaticResource LocalizedStrings}}" GroupName="GroupPhoneType"/>
+                <TextBlock Name="TextBlockPublicProtectedInfo" TextWrapping="Wrap" Text="{Binding Path=AppResources.ThisIsPublicPhoneInfo, Source={StaticResource LocalizedStrings}}" />
+
+                <RadioButton Name="RadioButtonPrivatePhone" Content="{Binding Path=AppResources.ThisIsPrivatePhone, Source={StaticResource LocalizedStrings}}" GroupName="GroupPhoneType" BorderThickness="0" />
+                <TextBlock Name="TextBlockPrivateProtectedInfo" TextWrapping="Wrap" Text="{Binding Path=AppResources.ThisIsPrivatePhoneInfo, Source={StaticResource LocalizedStrings}}" />
+                <TextBlock Name="TextBlockSecurityWarning" TextWrapping="Wrap" Foreground="Orange" Text="{Binding Path=AppResources.PrivatePhoneWarning, Source={StaticResource LocalizedStrings}}" />
                 
                 <CheckBox Name="CheckBoxUseLightVersion" Content="Käytä Outlook Phone App Lightia" Checked="CheckBoxUseLightVersion_Checked" />
-                
+
                 <TextBlock Name="TextBlockLightVersionInfo" TextWrapping="Wrap" />
                 <HyperlinkButton Content="napsauta tätä." Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank" HorizontalAlignment="Right" Margin="200, -30, 0, 0" />
                 
