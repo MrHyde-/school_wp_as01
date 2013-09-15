@@ -10,41 +10,48 @@
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
-    SupportedOrientations="Portrait" Orientation="Portrait"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <ScrollViewer Name="ScrollViewerAssigment01">
         <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel x:Name="TitlePanel" Margin="12,17,0,28">
+        <StackPanel x:Name="TitlePanel" Margin="0,0,0,30">
             <TextBlock x:Name="ApplicationTitle" Text="##Microsoft®" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="##Outlook Phone App" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="PageTitle" Text="Outlook Phone App" TextWrapping="Wrap" Margin="9,-20,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             
-            <StackPanel x:Name="ControlPanel">
+            <StackPanel x:Name="ControlPanel" Margin="0, 20, 0, 0">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="##Suojaus"/>
                     <TextBlock Text=" ( "/>
                     <TextBlock Name="TextBlockShowPublicPrivateInfo" Text="näytä selitys" Foreground="Orange" Tap="TextBlockShowPublicPrivateInfo_OnTap"/>
                     <TextBlock Text=" )"/>
                 </StackPanel>
-                <RadioButton Name="RadioButtonPublicPhone" Content="##Julkinen"/>
+                
+                <RadioButton Name="RadioButtonPublicPhone" Content="##Julkinen" GroupName="GroupPhoneType"/>
                 <TextBlock Name="TextBlockPublicProtectedInfo" TextWrapping="Wrap" />
-                <RadioButton Name="RadioButtonPrivatePhone" Content="##Yksityinen"/>
+
+                <RadioButton Name="RadioButtonPrivatePhone" Content="##Yksityinen" GroupName="GroupPhoneType" />
                 <TextBlock Name="TextBlockPrivateProtectedInfo" TextWrapping="Wrap" />
                 <TextBlock Name="TextBlockSecurityWarning" TextWrapping="Wrap" Foreground="Orange" />
-                <CheckBox Name="CheckBoxUseLightVersion" Content="Käytä Outlook Web App Lightia" />
+                
+                <CheckBox Name="CheckBoxUseLightVersion" Content="Käytä Outlook Phone App Lightia" Checked="CheckBoxUseLightVersion_Checked" />
                 <TextBlock Name="TextBlockLightVersionInfo" TextWrapping="Wrap" />
+                <HyperlinkButton Content="napsauta tätä." Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank"/>
             </StackPanel>
             
             <StackPanel x:Name="UserNamePanel" Orientation="Horizontal">
                 <TextBlock Name="TextBlockUserName" Text="Käyttäjänimi:" HorizontalAlignment="Center" />
-                <TextBox Name="TextBoxUserName" Margin="0" Height="56" Width="334" />
+                <TextBox Name="TextBoxUserName" Margin="0" Height="71" Width="334"  />
             </StackPanel>
 
             <StackPanel x:Name="PasswordPanel" Orientation="Horizontal">
                 <TextBlock Name="TextBlockPassword" Text="Salasana:" HorizontalAlignment="Center" />
-                <TextBox Name="TextBoxPassword" Margin="0" Height="56" Width="334" />
+                <PasswordBox Height="71" Name="passwordBox1" Width="300" />
             </StackPanel>
+            <Button Content="Kirjaudu sisään" Height="71" Name="buttonLogin" Width="280" Background="#EB9C12" BorderBrush="#EB9C12" BorderThickness="0" Click="buttonLogin_Click" />
+            <TextBlock Margin="0,20,0,0" Name="TextBlockEndStatement1" TextWrapping="Wrap" Text="Yhdistettynä Microsoft Exchangeen" />
+            <TextBlock Margin="0,0,0,0" Name="TextBlockEndStatement2" TextWrapping="Wrap" Text="© 2010 Microsoft Corporation. Kaikki oikeudet pidätetään." />
         </StackPanel>
     </ScrollViewer>
 
