@@ -17,39 +17,41 @@
     <ScrollViewer Name="ScrollViewerAssigment01">
         <!--TitlePanel contains the name of the application and page title-->
         <StackPanel x:Name="TitlePanel" Margin="0,0,0,30">
-            <TextBlock x:Name="ApplicationTitle" Text="##Microsoft®" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock x:Name="PageTitle" Text="Outlook Phone App" TextWrapping="Wrap" Margin="9,-20,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock x:Name="ApplicationTitle" Text="Microsoft®" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Outlook App" TextWrapping="Wrap" Margin="9,-20,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
             
             <StackPanel x:Name="ControlPanel" Margin="0, 20, 0, 0">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="##Suojaus"/>
-                    <TextBlock Text=" ( "/>
-                    <TextBlock Name="TextBlockShowPublicPrivateInfo" Text="näytä selitys" Foreground="Orange" Tap="TextBlockShowPublicPrivateInfo_OnTap"/>
-                    <TextBlock Text=" )"/>
+                    <TextBlock Text="Suojaus" FontSize="22.667" />
+                    <TextBlock Text=" ( " FontSize="22.667"/>
+                    <TextBlock Name="TextBlockShowPublicPrivateInfo" Text="näytä selitys" Foreground="Orange" Tap="TextBlockShowPublicPrivateInfo_OnTap" FontSize="22.667"/>
+                    <TextBlock Text=" )" FontSize="22.667" />
                 </StackPanel>
                 
                 <RadioButton Name="RadioButtonPublicPhone" Content="##Julkinen" GroupName="GroupPhoneType"/>
                 <TextBlock Name="TextBlockPublicProtectedInfo" TextWrapping="Wrap" />
 
-                <RadioButton Name="RadioButtonPrivatePhone" Content="##Yksityinen" GroupName="GroupPhoneType" />
+                <RadioButton Name="RadioButtonPrivatePhone" Content="##Yksityinen" GroupName="GroupPhoneType" BorderThickness="0" />
                 <TextBlock Name="TextBlockPrivateProtectedInfo" TextWrapping="Wrap" />
                 <TextBlock Name="TextBlockSecurityWarning" TextWrapping="Wrap" Foreground="Orange" />
                 
                 <CheckBox Name="CheckBoxUseLightVersion" Content="Käytä Outlook Phone App Lightia" Checked="CheckBoxUseLightVersion_Checked" />
+                
                 <TextBlock Name="TextBlockLightVersionInfo" TextWrapping="Wrap" />
-                <HyperlinkButton Content="napsauta tätä." Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank"/>
+                <HyperlinkButton Content="napsauta tätä." Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank" HorizontalAlignment="Right" Margin="200, -30, 0, 0" />
+                
             </StackPanel>
             
-            <StackPanel x:Name="UserNamePanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlockUserName" Text="Käyttäjänimi:" HorizontalAlignment="Center" />
-                <TextBox Name="TextBoxUserName" Margin="0" Height="71" Width="334"  />
-            </StackPanel>
+            <Grid Name="GridUserNameAndPassWord" Margin="0, 20, 0, 0">
+                <TextBlock Name="TextBlockUserName" Text="Käyttäjänimi:" Margin="0,20,350,174" />
+                <TextBox Name="TextBoxUserName" Margin="130, 0, 0, 157" Height="71"/>
 
-            <StackPanel x:Name="PasswordPanel" Orientation="Horizontal">
-                <TextBlock Name="TextBlockPassword" Text="Salasana:" HorizontalAlignment="Center" />
-                <PasswordBox Height="71" Name="passwordBox1" Width="300" />
-            </StackPanel>
-            <Button Content="Kirjaudu sisään" Height="71" Name="buttonLogin" Width="280" Background="#EB9C12" BorderBrush="#EB9C12" BorderThickness="0" Click="buttonLogin_Click" />
+                <TextBlock Name="TextBlockPassword" Text="Salasana:" Margin="0,78,350,119" />
+                <PasswordBox Name="passwordBox1" Margin="130,61,0,97" Height="71"/>
+
+                <Button Content="Kirjaudu sisään" Height="71" Name="ButtonLogin" Background="#EB9C12" BorderBrush="#EB9C12" BorderThickness="0" Click="ButtonLogin_Click" Margin="235, 110, 20, 0" />
+            </Grid>
+            
             <TextBlock Margin="0,20,0,0" Name="TextBlockEndStatement1" TextWrapping="Wrap" Text="Yhdistettynä Microsoft Exchangeen" />
             <TextBlock Margin="0,0,0,0" Name="TextBlockEndStatement2" TextWrapping="Wrap" Text="© 2010 Microsoft Corporation. Kaikki oikeudet pidätetään." />
         </StackPanel>

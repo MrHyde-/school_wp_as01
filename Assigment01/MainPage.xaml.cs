@@ -75,7 +75,7 @@ namespace Assigment01
             hyperlinkButtonSupportedBrowsers.Visibility = Visibility.Visible;
         }
 
-        private void buttonLogin_Click(object sender, RoutedEventArgs e)
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
             String messageToUser = "login done";
             if (String.IsNullOrEmpty(TextBoxUserName.Text) && String.IsNullOrEmpty(passwordBox1.Password))
