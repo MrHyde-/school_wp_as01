@@ -6,12 +6,11 @@
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
-    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    mc:Ignorable="d" FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
+    shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <ScrollViewer Name="ScrollViewerAssigment01">
@@ -34,39 +33,26 @@
                 <RadioButton Name="RadioButtonPrivatePhone" Content="{Binding Path=AppResources.ThisIsPrivatePhone, Source={StaticResource LocalizedStrings}}" GroupName="GroupPhoneType" BorderThickness="0" />
                 <TextBlock Name="TextBlockPrivateProtectedInfo" TextWrapping="Wrap" Text="{Binding Path=AppResources.ThisIsPrivatePhoneInfo, Source={StaticResource LocalizedStrings}}" />
                 <TextBlock Name="TextBlockSecurityWarning" TextWrapping="Wrap" Foreground="Orange" Text="{Binding Path=AppResources.PrivatePhoneWarning, Source={StaticResource LocalizedStrings}}" />
-                
-                <CheckBox Name="CheckBoxUseLightVersion" Content="Käytä Outlook Phone App Lightia" Checked="CheckBoxUseLightVersion_Checked" />
 
-                <TextBlock Name="TextBlockLightVersionInfo" TextWrapping="Wrap" />
-                <HyperlinkButton Content="napsauta tätä." Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank" HorizontalAlignment="Right" Margin="200, -30, 0, 0" />
+                <CheckBox Name="CheckBoxUseLightVersion" Content="{Binding Path=AppResources.UsePhoneAppLight, Source={StaticResource LocalizedStrings}}" />
+
+                <TextBlock Name="TextBlockLightVersionInfo" TextWrapping="Wrap" Text="{Binding Path=AppResources.UsePhoneLightInfo, Source={StaticResource LocalizedStrings}}" />
+                <HyperlinkButton Content="{Binding Path=AppResources.ClickMeWithDot, Source={StaticResource LocalizedStrings}}" Height="30" Name="hyperlinkButtonSupportedBrowsers" Foreground="Orange" NavigateUri="http://go.microsoft.com/fwlink/?LinkID=129362" TargetName="_blank" HorizontalAlignment="Right" Margin="200, -30, 0, 0" />
                 
             </StackPanel>
             
             <Grid Name="GridUserNameAndPassWord" Margin="0, 20, 0, 0">
-                <TextBlock Name="TextBlockUserName" Text="Käyttäjänimi:" Margin="0,20,350,174" />
+                <TextBlock Name="TextBlockUserName" Text="{Binding Path=AppResources.UserNameWithColon, Source={StaticResource LocalizedStrings}}" Margin="0,20,350,174" />
                 <TextBox Name="TextBoxUserName" Margin="130, 0, 0, 157" Height="71"/>
 
-                <TextBlock Name="TextBlockPassword" Text="Salasana:" Margin="0,78,350,119" />
+                <TextBlock Name="TextBlockPassword" Text="{Binding Path=AppResources.PasswordWithColon, Source={StaticResource LocalizedStrings}}" Margin="0,78,350,119" />
                 <PasswordBox Name="passwordBox1" Margin="130,61,0,97" Height="71"/>
 
-                <Button Content="Kirjaudu sisään" Height="71" Name="ButtonLogin" Background="#EB9C12" BorderBrush="#EB9C12" BorderThickness="0" Click="ButtonLogin_Click" Margin="235, 110, 20, 0" />
+                <Button Content="{Binding Path=AppResources.Login, Source={StaticResource LocalizedStrings}}" Height="71" Name="ButtonLogin" Background="#EB9C12" BorderBrush="#EB9C12" BorderThickness="0" Click="ButtonLogin_Click" Margin="235, 110, 20, 0" />
             </Grid>
-            
-            <TextBlock Margin="0,20,0,0" Name="TextBlockEndStatement1" TextWrapping="Wrap" Text="Yhdistettynä Microsoft Exchangeen" />
-            <TextBlock Margin="0,0,0,0" Name="TextBlockEndStatement2" TextWrapping="Wrap" Text="© 2010 Microsoft Corporation. Kaikki oikeudet pidätetään." />
+
+            <TextBlock Margin="0,20,0,0" Name="TextBlockEndStatement1" TextWrapping="Wrap" Text="{Binding Path=AppResources.ConnectedToMsExchange, Source={StaticResource LocalizedStrings}}" />
+            <TextBlock Margin="0,0,0,0" Name="TextBlockEndStatement2" TextWrapping="Wrap" Text="{Binding Path=AppResources.MSCopyright2010, Source={StaticResource LocalizedStrings}}" />
         </StackPanel>
     </ScrollViewer>
-
-    <!--Sample code showing usage of ApplicationBar-->
-    <!--<phone:PhoneApplicationPage.ApplicationBar>
-        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
-            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
-            <shell:ApplicationBar.MenuItems>
-                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
-                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
-            </shell:ApplicationBar.MenuItems>
-        </shell:ApplicationBar>
-    </phone:PhoneApplicationPage.ApplicationBar>-->
-
 </phone:PhoneApplicationPage>

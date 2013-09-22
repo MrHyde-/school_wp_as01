@@ -70,11 +70,65 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to piilota selitys.
+        ///   Looks up a localized string similar to click here..
+        /// </summary>
+        public static string ClickMeWithDot {
+            get {
+                return ResourceManager.GetString("ClickMeWithDot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connected to Microsoft Exchange.
+        /// </summary>
+        public static string ConnectedToMsExchange {
+            get {
+                return ResourceManager.GetString("ConnectedToMsExchange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to hide explanation.
         /// </summary>
         public static string HideExplanation {
             get {
                 return ResourceManager.GetString("HideExplanation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to login done.
+        /// </summary>
+        public static string LoginDone {
+            get {
+                return ResourceManager.GetString("LoginDone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to invalid username and password.
+        /// </summary>
+        public static string LoginFailure {
+            get {
+                return ResourceManager.GetString("LoginFailure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to © 2010 Microsoft Corporation. All rights reserved..
+        /// </summary>
+        public static string MSCopyright2010 {
+            get {
+                return ResourceManager.GetString("MSCopyright2010", resourceCulture);
             }
         }
         
@@ -88,7 +142,16 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Varoitus: Valitsemalla tämän asetuksen vahvistat, että tämä puhelin on organisaatiosi tietoturvakäytännön mukainen..
+        ///   Looks up a localized string similar to Password:.
+        /// </summary>
+        public static string PasswordWithColon {
+            get {
+                return ResourceManager.GetString("PasswordWithColon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning: By selecting this option, you confirm that this computer complies with your organization&apos;s security policy..
         /// </summary>
         public static string PrivatePhoneWarning {
             get {
@@ -97,7 +160,7 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to näytä selitys.
+        ///   Looks up a localized string similar to show explanation.
         /// </summary>
         public static string ShowExplanation {
             get {
@@ -106,7 +169,7 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Yksityinen puhelin.
+        ///   Looks up a localized string similar to This is a private phone.
         /// </summary>
         public static string ThisIsPrivatePhone {
             get {
@@ -115,7 +178,7 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valitse tämä asetus, jos olet tämän puhelimen ainoa käyttäjä. Palvelimesi sallii tavallista pidemmän käyttämättömyysajan, ennen kuin sinut kirjataan ulos..
+        ///   Looks up a localized string similar to Select this option if you&apos;re the only person who uses this phone. Your server will allow a longer period of inactivity before signing you out..
         /// </summary>
         public static string ThisIsPrivatePhoneInfo {
             get {
@@ -124,7 +187,7 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Julkinen puhelin.
+        ///   Looks up a localized string similar to This is a public or shared phone.
         /// </summary>
         public static string ThisIsPublicPhone {
             get {
@@ -133,7 +196,7 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Valitse tämä vaihtoehto, jos käytät Outlook Appiä julkisessa puhelimessa. Kun olet lopettanut, muista kirjautua ulos ja sulkea sovellus istuntosi päätteeksi..
+        ///   Looks up a localized string similar to Select this option if you use Outlook App on a public phone. Be sure to sign out when you&apos;ve finished and close all windows to end your session..
         /// </summary>
         public static string ThisIsPublicPhoneInfo {
             get {
@@ -142,11 +205,38 @@ namespace Assigment01.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Suojaus.
+        ///   Looks up a localized string similar to Security.
         /// </summary>
         public static string TitleProtection {
             get {
                 return ResourceManager.GetString("TitleProtection", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the light version of Outlook App.
+        /// </summary>
+        public static string UsePhoneAppLight {
+            get {
+                return ResourceManager.GetString("UsePhoneAppLight", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The light version of Outlook App includes fewer features. Use it if you&apos;re on a slow connection or using a phone with unusually strict browser security settings. We also support the full Outlook App experience on some browsers on Windows, Mac, and Linux phones. To check out all the supported browsers and operating systems, .
+        /// </summary>
+        public static string UsePhoneLightInfo {
+            get {
+                return ResourceManager.GetString("UsePhoneLightInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name:.
+        /// </summary>
+        public static string UserNameWithColon {
+            get {
+                return ResourceManager.GetString("UserNameWithColon", resourceCulture);
             }
         }
     }

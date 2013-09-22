@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
+using Assigment01.Resources;
 using Microsoft.Phone.Controls;
 
 namespace Assigment01
@@ -15,41 +17,56 @@ namespace Assigment01
             Loaded += OnLoaded;
         }
 
+        /// <summary>
+        /// After load show and hide necessary components
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="routedEventArgs"></param>
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
+            //make preselect for the user
             RadioButtonPublicPhone.IsChecked = true;
-            hyperlinkButtonSupportedBrowsers.Visibility = Visibility.Collapsed;
-
+            
+            //Attach events to radiobuttons and checkbox
             RadioButtonPrivatePhone.Checked += RadioButtonPrivatePhoneOnChecked;
             RadioButtonPublicPhone.Checked += RadioButtonPublicPhoneOnChecked;
-            CheckBoxUseLightVersion.Unchecked += CheckBoxUseLightVersionOnUnchecked;
 
+            CheckBoxUseLightVersion.Checked += CheckBoxUseLightVersion_onChange;
+            CheckBoxUseLightVersion.Unchecked += CheckBoxUseLightVersion_onChange;
+
+            //hide components that are not visible when user opens the application
+            hyperlinkButtonSupportedBrowsers.Visibility = Visibility.Collapsed;
             TextBlockPublicProtectedInfo.Visibility = Visibility.Collapsed;
-
             TextBlockPrivateProtectedInfo.Visibility = Visibility.Collapsed;
-
-            TextBlockLightVersionInfo.Text = "Outlook Web Appin kevytversio sisältää vähemmän toimintoja. Käytä sitä, jos yhteytesi on hidas tai jos käytät tietokonetta, jonka selaimen suojausasetukset ovat tavallista rajoittavammat. Outlook-verkkosovelluksen täyttä versiota tuetaan myös joissakin Windows- ja Mac-tietokoneiden selaimissa. Jos haluat tarkistaa kaikki tuetut selaimet ja käyttöjärjestelmät, ";
             TextBlockLightVersionInfo.Visibility = Visibility.Collapsed;
-
             TextBlockSecurityWarning.Visibility = Visibility.Collapsed;
         }
 
-        private void CheckBoxUseLightVersionOnUnchecked(object sender, RoutedEventArgs routedEventArgs)
-        {
-            TextBlockLightVersionInfo.Visibility = Visibility.Collapsed;
-            hyperlinkButtonSupportedBrowsers.Visibility = Visibility.Collapsed;
-        }
-
+        /// <summary>
+        /// Event for selecting the public phone radiobutton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="routedEventArgs"></param>
         private void RadioButtonPublicPhoneOnChecked(object sender, RoutedEventArgs routedEventArgs)
         {
             TextBlockSecurityWarning.Visibility = Visibility.Collapsed;
         }
 
+        /// <summary>
+        /// Event for selecting the private phone radiobutton
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="routedEventArgs"></param>
         private void RadioButtonPrivatePhoneOnChecked(object sender, RoutedEventArgs routedEventArgs)
         {
             TextBlockSecurityWarning.Visibility = Visibility.Visible;
         }
 
+        /// <summary>
+        /// Event for viewing the security explanation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBlockShowPublicPrivateInfo_OnTap(object sender, GestureEventArgs e)
         {
             TextBlockPublicProtectedInfo.Visibility = TextBlockPublicProtectedInfo.Visibility == Visibility.Collapsed
@@ -58,26 +75,43 @@ namespace Assigment01
 
             //we define text from above textbox visibility ^^
             TextBlockShowPublicPrivateInfo.Text = TextBlockPublicProtectedInfo.Visibility == Visibility.Collapsed
-                                                      ? "näytä selitys"
-                                                      : "piilota selitys";
+                                                      ? AppResources.ShowExplanation
+                                                      : AppResources.HideExplanation;
 
             TextBlockPrivateProtectedInfo.Visibility = TextBlockPrivateProtectedInfo.Visibility == Visibility.Collapsed
                                                           ? Visibility.Visible
                                                           : Visibility.Collapsed;
         }
 
-        private void CheckBoxUseLightVersion_Checked(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Event for changing the checkbox status at the mainpage
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="routedEventArgs"></param>
+        private void CheckBoxUseLightVersion_onChange(object sender, RoutedEventArgs routedEventArgs)
         {
-            TextBlockLightVersionInfo.Visibility = Visibility.Visible;
-            hyperlinkButtonSupportedBrowsers.Visibility = Visibility.Visible;
+            CheckBox appLight = (CheckBox) sender;
+
+            if (appLight.IsChecked.HasValue)
+            {
+                TextBlockLightVersionInfo.Visibility = appLight.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
+                hyperlinkButtonSupportedBrowsers.Visibility = appLight.IsChecked.Value ? Visibility.Visible : Visibility.Collapsed;
+            }
         }
 
+        /// <summary>
+        /// Event for pressing the login button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            String messageToUser = "login done";
+            
+            String messageToUser = AppResources.LoginDone;
+            
             if (String.IsNullOrEmpty(TextBoxUserName.Text) && String.IsNullOrEmpty(passwordBox1.Password))
             {
-                 messageToUser = "invalid username and password";
+                messageToUser = AppResources.LoginFailure;
             }
 
             MessageBox.Show(messageToUser);

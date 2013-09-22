@@ -121,60 +121,60 @@
     <value>Microsoft®</value>
   </data>
   <data name="ClickMeWithDot" xml:space="preserve">
-    <value>click here.</value>
+    <value>napsauta tätä.</value>
   </data>
   <data name="ConnectedToMsExchange" xml:space="preserve">
-    <value>Connected to Microsoft Exchange</value>
+    <value>Yhdistettynä Microsoft Exchangeen</value>
   </data>
   <data name="HideExplanation" xml:space="preserve">
-    <value>hide explanation</value>
+    <value>piilota selitys</value>
   </data>
   <data name="Login" xml:space="preserve">
-    <value>Login</value>
+    <value>Kirjaudu sisään</value>
   </data>
   <data name="LoginDone" xml:space="preserve">
-    <value>login done</value>
+    <value>Kirjauduttu sisään</value>
   </data>
   <data name="LoginFailure" xml:space="preserve">
-    <value>invalid username and password</value>
+    <value>Käyttäjätunnus ja salasana väärin</value>
   </data>
   <data name="MSCopyright2010" xml:space="preserve">
-    <value>© 2010 Microsoft Corporation. All rights reserved.</value>
+    <value>© 2010 Microsoft Corporation. Kaikki oikeudet pidätetään.</value>
   </data>
   <data name="PageTitle" xml:space="preserve">
     <value>Outlook App</value>
   </data>
   <data name="PasswordWithColon" xml:space="preserve">
-    <value>Password:</value>
+    <value>Salasana:</value>
   </data>
   <data name="PrivatePhoneWarning" xml:space="preserve">
-    <value>Warning: By selecting this option, you confirm that this computer complies with your organization's security policy.</value>
+    <value>Varoitus: Valitsemalla tämän asetuksen vahvistat, että tämä puhelin on organisaatiosi tietoturvakäytännön mukainen.</value>
   </data>
   <data name="ShowExplanation" xml:space="preserve">
-    <value>show explanation</value>
+    <value>näytä selitys</value>
   </data>
   <data name="ThisIsPrivatePhone" xml:space="preserve">
-    <value>This is a private phone</value>
+    <value>Yksityinen puhelin</value>
   </data>
   <data name="ThisIsPrivatePhoneInfo" xml:space="preserve">
-    <value>Select this option if you're the only person who uses this phone. Your server will allow a longer period of inactivity before signing you out.</value>
+    <value>Valitse tämä asetus, jos olet tämän puhelimen ainoa käyttäjä. Palvelimesi sallii tavallista pidemmän käyttämättömyysajan, ennen kuin sinut kirjataan ulos.</value>
   </data>
   <data name="ThisIsPublicPhone" xml:space="preserve">
-    <value>This is a public or shared phone</value>
+    <value>Julkinen puhelin</value>
   </data>
   <data name="ThisIsPublicPhoneInfo" xml:space="preserve">
-    <value>Select this option if you use Outlook App on a public phone. Be sure to sign out when you've finished and close all windows to end your session.</value>
+    <value>Valitse tämä vaihtoehto, jos käytät Outlook Appiä julkisessa puhelimessa. Kun olet lopettanut, muista kirjautua ulos ja sulkea sovellus istuntosi päätteeksi.</value>
   </data>
   <data name="TitleProtection" xml:space="preserve">
-    <value>Security</value>
+    <value>Suojaus</value>
   </data>
   <data name="UsePhoneAppLight" xml:space="preserve">
-    <value>Use the light version of Outlook App</value>
+    <value>Käytä Outlook Phone App Lightia</value>
   </data>
   <data name="UsePhoneLightInfo" xml:space="preserve">
-    <value>The light version of Outlook App includes fewer features. Use it if you're on a slow connection or using a phone with unusually strict browser security settings. We also support the full Outlook App experience on some browsers on Windows, Mac, and Linux phones. To check out all the supported browsers and operating systems, </value>
+    <value>Outlook Web Appin kevytversio sisältää vähemmän toimintoja. Käytä sitä, jos yhteytesi on hidas tai jos käytät puhelinta, jonka selaimen suojausasetukset ovat tavallista rajoittavammat. Outlook-verkkosovelluksen täyttä versiota tuetaan myös joissakin Windows- ja Mac-tietokoneiden selaimissa. Jos haluat tarkistaa kaikki tuetut selaimet ja käyttöjärjestelmät, </value>
   </data>
   <data name="UserNameWithColon" xml:space="preserve">
-    <value>User name:</value>
+    <value>Käyttäjänimi:</value>
   </data>
 </root>
